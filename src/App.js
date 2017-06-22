@@ -1,24 +1,27 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      txt: 'Hello I have'
+    }
+  }
+
+  update(e) {
+    this.setState({ txt: e.target.value });
+  }
+
   render() {
     return(
       <div>
-        <h1>{this.props.txt}</h1>
-        <b>{this.props.cats} cats</b>
+        <input type='text' placeholder='type something' onChange={this.update.bind(this)}/>
+        <h1>{this.state.txt}</h1>
       </div>
     );
   }
 }
-
-App.propTypes = {
-  txt: PropTypes.string,
-  cats: PropTypes.number.isRequired
-};
-
-App.defaultProps = {
-  cats: 3
-};
 
 export default App;
