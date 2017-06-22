@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <h1>{this.props.text}</h1>
+        <h1>{this.props.txt}</h1>
         <b>{this.props.cats} cats</b>
       </div>
     );
@@ -13,7 +13,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  text: PropTypes.string,
+  txt: PropTypes.string,
   cats: PropTypes.number.isRequired
 };
 
