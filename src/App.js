@@ -6,7 +6,7 @@ class App extends React.Component {
     super();
 
     this.state = {
-      txt: 'Hello I have'
+      txt: 'Default text'
     }
   }
 
@@ -17,11 +17,13 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <input type='text' placeholder='type something' onChange={this.update.bind(this)}/>
         <h1>{this.state.txt}</h1>
+        <Widget update={this.update.bind(this)} />
       </div>
     );
   }
 }
+
+const Widget = (props) => <input type='text' placeholder='type something' onChange={props.update}/>
 
 export default App;
